@@ -16,10 +16,7 @@ navObserver.observe(scrollWatcher);
 //Humbergur Icon and Mobile Menu
 window.addEventListener("click", (e) => {
   if (e.target === document.querySelector("body")) {
-    menuContainer.classList.remove("appear");
-    menuContainer.classList.add("disappear");
-    humbergerBtn.querySelector("i.fa-solid").classList.remove("fa-xmark");
-    humbergerBtn.querySelector("i.fa-solid").classList.add("fa-bars");
+    menuContainer.style.display = "none";
   }
 });
 
