@@ -349,16 +349,17 @@ main {
 }
 
 .service-card {
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px 0.5px rgba(49, 49, 184, 0.61);
   padding: 1rem;
   text-align: center;
   width: fit-content;
-  border: 1px solid black;
   transition: all 0.3s;
 }
 
 .service-card:hover {
-  background-color: rgb(229, 255, 0);
-  color: var(--blue);
+  box-shadow: 1px 1px 5px rgba(49, 49, 184, 0.61);
+  background-color: rgb(233, 255, 38);
 }
 .service-card > img {
   margin: 0 auto;
