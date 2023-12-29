@@ -14,9 +14,14 @@ const navObserver = new IntersectionObserver((entries) => {
 navObserver.observe(scrollWatcher);
 
 //Humbergur Icon and Mobile Menu
-window.addEventListener("click", (e) => {
-  if (e.target === document.querySelector("body")) {
-    menuContainer.style.display = "none";
+document.addEventListener("click", (e) => {
+  console.log(e.target);
+  if (!menuContainer.contains(e.target) && !humbergerBtn.contains(e.target)) {
+    menuContainer.classList.remove("appear");
+    menuContainer.classList.add("disappear");
+    humbergerBtn.querySelector("i.fa-solid").classList.remove("fa-xmark");
+    humbergerBtn.querySelector("i.fa-solid").classList.add("fa-bars");
+    e.stopPropagation();
   }
 });
 
@@ -33,3 +38,10 @@ humbergerBtn.addEventListener("click", (e) => {
     humbergerBtn.querySelector("i.fa-solid").classList.remove("fa-bars");
   }
 });
+
+function closeNav() {
+  menuContainer.classList.remove("appear");
+  menuContainer.classList.add("disappear");
+  humbergerBtn.querySelector("i.fa-solid").classList.remove("fa-xmark");
+  humbergerBtn.querySelector("i.fa-solid").classList.add("fa-bars");
+}
