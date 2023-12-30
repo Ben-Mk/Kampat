@@ -3,6 +3,11 @@ const humbergerBtn = document.querySelector(".humberger-icon");
 const menuContainer = document.querySelector(".nav-bar");
 const navigationBar = document.querySelector(".header");
 const scrollWatcher = document.createElement("div");
+const form = document.querySelector("form");
+const fullName = document.getElementById("name");
+const email = document.getElementById("email");
+const phone = document.getElementById("phone");
+const mess = document.getElementById("message");
 
 //Navigation Header
 scrollWatcher.setAttribute("data-scroll-watcher", "");
@@ -17,11 +22,11 @@ navObserver.observe(scrollWatcher);
 document.addEventListener("click", (e) => {
   console.log(e.target);
   if (!menuContainer.contains(e.target) && !humbergerBtn.contains(e.target)) {
+    e.stopPropagation();
     menuContainer.classList.remove("appear");
     menuContainer.classList.add("disappear");
     humbergerBtn.querySelector("i.fa-solid").classList.remove("fa-xmark");
     humbergerBtn.querySelector("i.fa-solid").classList.add("fa-bars");
-    e.stopPropagation();
   }
 });
 
@@ -45,3 +50,23 @@ function closeNav() {
   humbergerBtn.querySelector("i.fa-solid").classList.remove("fa-xmark");
   humbergerBtn.querySelector("i.fa-solid").classList.add("fa-bars");
 }
+
+//Email Function
+
+function sendEmail() {
+  const bodyMessage = `Name: ${fullName.value}<br> Email: ${email.value} <br> Phone Number: ${phone.value} <br> Message: ${mess.value}`;
+  Email.send({
+    Host: "smtp.elasticemail.com",
+    Username: "benmk300@gmail.com",
+    Password: "27E2F1ABC6F344BC500B2BD4712FF796666E",
+    To: "benmk300@gmail.com",
+    From: "benmk300@gmail.com",
+    Subject: "This is the subject",
+    Body: bodyMessage,
+  }).then((message) => alert(message));
+}
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  sendEmail();
+});

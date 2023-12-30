@@ -12,6 +12,7 @@
     />
     <link rel="stylesheet" href="./style.css" />
     <script src="./app.js" defer></script>
+    <script src="https://smtpjs.com/v3/smtp.js" defer></script>
     <link rel="Icon" href="img/Logo.png" />
     <title>Kampat</title>
   </head>
@@ -28,7 +29,9 @@
           <li><a href="#service-section" onclick="closeNav()">Services</a></li>
           <li><a href="#" onclick="closeNav()">Projects</a></li>
           <li>
-            <a href="#" id="contact-btn" onclick="closeNav()">Contact Us</a>
+            <a href="#contact-section" id="contact-btn" onclick="closeNav()"
+              >Contact Us</a
+            >
           </li>
         </ul>
       </nav>
@@ -120,7 +123,11 @@
           <!-- Services Cards -->
           <div class="service-container">
             <div class="service-card">
-              <img src="img/images.jpeg" alt="" />
+              <img
+                src="img/7790128-removebg-preview.png"
+                width="260px"
+                alt=""
+              />
               <h3 class="service-title">Roofing Installation</h3>
               <p class="service-info">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero,
@@ -131,7 +138,11 @@
             </div>
 
             <div class="service-card">
-              <img src="img/images.jpeg" alt="" />
+              <img
+                src="img/false-ceiling-installation-isolated-concept-vector-illustration_107173-23745-removebg-preview.png"
+                width="260px"
+                alt=""
+              />
               <h3 class="service-title">Ceiling</h3>
               <p class="service-info">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. At
@@ -142,7 +153,11 @@
             </div>
 
             <div class="service-card">
-              <img src="img/images.jpeg" alt="" />
+              <img
+                src="img/8671491-removebg-preview (3).png"
+                width="260px"
+                alt=""
+              />
               <h3 class="service-title">Repair</h3>
               <p class="service-info">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum
@@ -152,6 +167,66 @@
               </p>
             </div>
           </div>
+        </section>
+
+        <!-- PROJECTS SECTION -->
+        <section id="project-section"></section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact-section">
+          <h2 class="contact-heading">Get in touch</h2>
+          <form action="#">
+            <div class="contact-input-field">
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Full Name"
+                required
+                class="item"
+              />
+            </div>
+
+            <div class="contact-input-field">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email Address"
+                autocomplete="off"
+                required
+                class="item"
+              />
+            </div>
+
+            <div class="contact-input-field">
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
+                placeholder="Phone Number"
+                autocomplete="off"
+                required
+                class="item"
+              />
+            </div>
+
+            <div class="textarea">
+              <textarea
+                name="message"
+                id="message"
+                cols="30"
+                rows="10"
+                placeholder="Your Message"
+                autocomplete="off"
+                required
+                class="item"
+              ></textarea>
+            </div>
+
+            <button type="submit" id="submit-btn">Submit</button>
+          </form>
         </section>
       </main>
     </body>

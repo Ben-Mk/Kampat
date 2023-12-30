@@ -241,6 +241,7 @@ main {
 }
 
 .hero-section-banner img {
+  position: relative;
   border-radius: 20px;
 }
 
@@ -313,7 +314,7 @@ main {
   text-transform: uppercase;
   margin: 0.5rem auto;
   font-family: Arial, Helvetica, sans-serif;
-  font-weight: 50;
+  font-weight: 200;
   font-size: 1.5rem;
   color: var(--blue);
 }
@@ -359,22 +360,73 @@ main {
 
 .service-card:hover {
   box-shadow: 1px 1px 5px rgba(49, 49, 184, 0.61);
+  scale: 1.03;
   background-color: rgb(233, 255, 38);
 }
 .service-card > img {
   margin: 0 auto;
   transition: all 0.3s;
 }
-.service-card:hover > img {
-  scale: 1.05;
-}
+
 .service-title {
   margin: 0.8rem auto;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
+  color: var(--blue);
 }
 
 .service-info {
   font-size: 1.1rem;
+}
+
+/* CONTACT SECTION */
+form {
+  max-width: 50%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.contact-heading {
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 2rem auto;
+}
+
+.item {
+  width: 100%;
+  padding: 1rem;
+  background-color: transparent;
+  border: 1px solid var(--blue);
+  outline: none;
+  border-radius: 10px;
+  margin: 0.5rem auto;
+  font-size: 1rem;
+}
+
+.textarea .item {
+  resize: none;
+}
+
+.item::placeholder {
+  color: rgba(0, 0, 0, 0.747);
+}
+
+#submit-btn {
+  cursor: pointer;
+  padding: 1rem;
+  background-color: var(--blue);
+  border: none;
+  color: white;
+  outline: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  width: 50%;
+  margin-bottom: 0.5rem;
+  transition: box-shadow 0.2s;
+}
+
+#submit-btn:hover {
+  box-shadow: 0 0 10px var(--blue);
 }
 /* Responsive Design */
 @media screen and (max-width: 768px) {
@@ -421,5 +473,13 @@ main {
   /* Services Section */
   .service-container {
     flex-direction: column;
+  }
+
+  /* Contanct Form */
+  form {
+    max-width: 100%;
+  }
+  #submit-btn {
+    width: 100%;
   }
 }
