@@ -19,16 +19,6 @@ const navObserver = new IntersectionObserver((entries) => {
 navObserver.observe(scrollWatcher);
 
 //Humbergur Icon and Mobile Menu
-document.addEventListener("click", (e) => {
-  console.log(e.target);
-  if (!menuContainer.contains(e.target) && !humbergerBtn.contains(e.target)) {
-    e.stopPropagation();
-    menuContainer.classList.remove("appear");
-    menuContainer.classList.add("disappear");
-    humbergerBtn.querySelector("i.fa-solid").classList.remove("fa-xmark");
-    humbergerBtn.querySelector("i.fa-solid").classList.add("fa-bars");
-  }
-});
 
 humbergerBtn.addEventListener("click", (e) => {
   if (menuContainer.classList.contains("appear")) {
@@ -41,6 +31,16 @@ humbergerBtn.addEventListener("click", (e) => {
     menuContainer.classList.add("appear");
     humbergerBtn.querySelector("i.fa-solid").classList.add("fa-xmark");
     humbergerBtn.querySelector("i.fa-solid").classList.remove("fa-bars");
+  }
+});
+
+document.addEventListener("click", (e) => {
+  if (!menuContainer.contains(e.target) && !humbergerBtn.contains(e.target)) {
+    e.stopPropagation();
+    menuContainer.classList.remove("appear");
+    menuContainer.classList.add("disappear");
+    humbergerBtn.querySelector("i.fa-solid").classList.remove("fa-xmark");
+    humbergerBtn.querySelector("i.fa-solid").classList.add("fa-bars");
   }
 });
 
@@ -68,5 +68,9 @@ function sendEmail() {
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
+  const captchaResponse = grecaptcha.getResponse();
+  if (!captchaResponse.length > 0) {
+    throw new Error("Captch not complete");
+  }
   sendEmail();
 });
