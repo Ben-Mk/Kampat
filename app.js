@@ -1,4 +1,4 @@
-console.log("hello");
+//Variables
 const humbergerBtn = document.querySelector(".humberger-icon");
 const menuContainer = document.querySelector(".nav-bar");
 const navigationBar = document.querySelector(".header");
@@ -8,6 +8,7 @@ const fullName = document.getElementById("name");
 const email = document.getElementById("email");
 const phone = document.getElementById("phone");
 const mess = document.getElementById("message");
+const subject = document.getElementById("issue");
 
 //Navigation Header
 scrollWatcher.setAttribute("data-scroll-watcher", "");
@@ -19,7 +20,6 @@ const navObserver = new IntersectionObserver((entries) => {
 navObserver.observe(scrollWatcher);
 
 //Humbergur Icon and Mobile Menu
-
 humbergerBtn.addEventListener("click", (e) => {
   if (menuContainer.classList.contains("appear")) {
     menuContainer.classList.remove("appear");
@@ -31,18 +31,20 @@ humbergerBtn.addEventListener("click", (e) => {
     menuContainer.classList.add("appear");
     humbergerBtn.querySelector("i.fa-solid").classList.add("fa-xmark");
     humbergerBtn.querySelector("i.fa-solid").classList.remove("fa-bars");
+    closeOnWindow();
   }
 });
 
-document.addEventListener("click", (e) => {
-  if (!menuContainer.contains(e.target) && !humbergerBtn.contains(e.target)) {
-    e.stopPropagation();
-    menuContainer.classList.remove("appear");
-    menuContainer.classList.add("disappear");
-    humbergerBtn.querySelector("i.fa-solid").classList.remove("fa-xmark");
-    humbergerBtn.querySelector("i.fa-solid").classList.add("fa-bars");
-  }
-});
+function closeOnWindow() {
+  document.addEventListener("click", (e) => {
+    if (!menuContainer.contains(e.target) && !humbergerBtn.contains(e.target)) {
+      menuContainer.classList.remove("appear");
+      menuContainer.classList.add("disappear");
+      humbergerBtn.querySelector("i.fa-solid").classList.remove("fa-xmark");
+      humbergerBtn.querySelector("i.fa-solid").classList.add("fa-bars");
+    }
+  });
+}
 
 function closeNav() {
   menuContainer.classList.remove("appear");
@@ -52,7 +54,6 @@ function closeNav() {
 }
 
 //Email Function
-
 function sendEmail() {
   const bodyMessage = `Name: ${fullName.value}<br> Email: ${email.value} <br> Phone Number: ${phone.value} <br> Message: ${mess.value}`;
   Email.send({
@@ -61,11 +62,12 @@ function sendEmail() {
     Password: "27E2F1ABC6F344BC500B2BD4712FF796666E",
     To: "benmk300@gmail.com",
     From: "benmk300@gmail.com",
-    Subject: "This is the subject",
+    Subject: subject.value,
     Body: bodyMessage,
   }).then((message) => alert(message));
 }
 
+//Recaptch Functionality
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   const captchaResponse = grecaptcha.getResponse();

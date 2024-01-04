@@ -428,11 +428,12 @@ form {
 #submit-btn:hover {
   box-shadow: 0 0 10px var(--blue);
 }
+
 /* Responsive Design */
 @media screen and (max-width: 768px) {
   /* Navigation */
   .header {
-    padding: 1rem 5%;
+    padding-inline-end: 1.5rem;
   }
 
   main {
@@ -461,6 +462,9 @@ form {
     gap: 2rem;
   }
 
+  #back-to-top {
+    right: 0;
+  }
   /* About Section */
   .about-container {
     flex-wrap: wrap;
