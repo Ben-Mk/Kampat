@@ -2,22 +2,13 @@
 const humbergerBtn = document.querySelector(".humberger-icon");
 const menuContainer = document.querySelector(".nav-bar");
 const navigationBar = document.querySelector(".header");
-const scrollWatcher = document.createElement("div");
+
 const form = document.querySelector("form");
 const fullName = document.getElementById("name");
 const email = document.getElementById("email");
 const phone = document.getElementById("phone");
 const mess = document.getElementById("message");
 const subject = document.getElementById("issue");
-
-//Navigation Header
-scrollWatcher.setAttribute("data-scroll-watcher", "");
-navigationBar.before(scrollWatcher);
-const navObserver = new IntersectionObserver((entries) => {
-  navigationBar.classList.toggle("sticking", !entries[0].isIntersecting);
-});
-
-navObserver.observe(scrollWatcher);
 
 //Humbergur Icon and Mobile Menu
 humbergerBtn.addEventListener("click", (e) => {
@@ -57,14 +48,20 @@ function closeNav() {
 function sendEmail() {
   const bodyMessage = `Name: ${fullName.value}<br> Email: ${email.value} <br> Phone Number: ${phone.value} <br> Message: ${mess.value}`;
   Email.send({
-    Host: "smtp.elasticemail.com",
-    Username: "benmk300@gmail.com",
-    Password: "27E2F1ABC6F344BC500B2BD4712FF796666E",
+    SecureToken: "12f30024-bc7f-4421-bcbb-c34b976a8319",
     To: "benmk300@gmail.com",
     From: "benmk300@gmail.com",
     Subject: subject.value,
     Body: bodyMessage,
-  }).then((message) => alert(message));
+  }).then((message) => {
+    if (message == "OK") {
+      Swal.fire({
+        title: "Success!",
+        text: "Message Sent!",
+        icon: "success",
+      });
+    }
+  });
 }
 
 //Recaptch Functionality
@@ -75,4 +72,7 @@ form.addEventListener("submit", (e) => {
     throw new Error("Captch not complete");
   }
   sendEmail();
+  grecaptcha.reset();
+  form.reset();
+  return false;
 });

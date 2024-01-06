@@ -28,6 +28,7 @@ img {
 
 /* NAVIGATION BAR */
 .header {
+  background-color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -36,10 +37,6 @@ img {
   top: 0;
   transition: all 0s;
   z-index: 1;
-}
-
-.header.sticking {
-  background-color: white;
 }
 
 .links {
@@ -72,21 +69,21 @@ img {
 }
 
 /* Call To Action Button */
-#contact-btn {
+#contact-link {
   border: 2px solid var(--blue);
   background-color: var(--blue);
   border-radius: 20px;
   color: white;
   padding: 0.6rem 1rem 0.6rem 1rem;
-  transition: all 0.3s;
+  transition: all 0.5s;
 }
 
-#contact-btn:hover {
+#contact-link:hover {
   background-color: white;
   color: var(--blue);
 }
 
-#contact-btn::before {
+#contact-link::before {
   content: none;
 }
 
@@ -166,7 +163,7 @@ img {
 main {
   max-width: 80rem;
   margin: 0 auto;
-  padding-inline: 3rem;
+  padding-top: 1rem;
 }
 .hero {
   display: flex;
@@ -206,18 +203,22 @@ main {
 }
 
 /* Call to action button */
+#contact-btn > button {
+  color: var(--blue);
+  transition: color 0.5s;
+}
+
+#contact-btn > button:hover {
+  color: white;
+}
 #hero-section-call-to-action {
   border: 2px solid var(--blue);
   padding: 1rem;
-  color: var(--blue);
   background-color: transparent;
   cursor: pointer;
   font-size: 1.2rem;
   margin-top: 1rem;
   position: relative;
-}
-#hero-section-call-to-action:hover {
-  color: white;
 }
 
 #hero-section-call-to-action::before {
@@ -279,10 +280,15 @@ main {
 
 /* ABOUT SECTION */
 
+#about-section {
+  padding-top: 2rem;
+}
+
 .about-heading {
   text-align: center;
   font-size: 2.5rem;
-  margin: 3rem auto;
+  margin: 0 auto;
+  padding-block: 4.5rem;
 }
 
 .about-container {
@@ -338,10 +344,14 @@ main {
 }
 
 /* SERVICE SECTION */
+#service-section {
+  padding-top: 2rem;
+}
 .service-heading {
   font-size: 2.5rem;
   text-align: center;
-  margin: 3rem auto;
+  margin: 0 auto;
+  padding-block: 4.5rem;
 }
 
 .service-container {
@@ -360,7 +370,7 @@ main {
 
 .service-card:hover {
   box-shadow: 1px 1px 5px rgba(49, 49, 184, 0.61);
-  scale: 1.03;
+  transform: translateY(-1rem);
   background-color: rgb(233, 255, 38);
 }
 .service-card > img {
@@ -378,7 +388,59 @@ main {
   font-size: 1.1rem;
 }
 
+/* PROJECT SECTION */
+#project-section {
+  padding-top: 2rem;
+}
+
+.project-heading {
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 0 auto;
+  padding-block: 4.5rem;
+}
+
+.project-container {
+  display: flex;
+  gap: 2rem;
+}
+
+.project-card {
+  box-shadow: 1px 1px 1px 0.5px rgba(159, 159, 177, 0.61);
+  padding: 1rem;
+  text-align: center;
+  width: fit-content;
+  transition: all 0.3s;
+}
+
+.project-card img {
+  margin: 0 auto;
+}
+
+.project-card:hover img {
+  scale: (1.05);
+}
+
+.project-card:hover {
+  box-shadow: 1px 1px 5px rgba(49, 49, 184, 0.61);
+  transform: translateY(-1rem);
+  background-color: rgb(233, 255, 38);
+}
+
+.project-title {
+  margin: 0.8rem auto;
+  font-size: 1.6rem;
+  color: var(--blue);
+}
+
+.project-info {
+  font-size: 1.1rem;
+}
 /* CONTACT SECTION */
+
+#contact-section {
+  padding-top: 2rem;
+}
 form {
   max-width: 50%;
   text-align: center;
@@ -388,7 +450,8 @@ form {
 .contact-heading {
   font-size: 2.5rem;
   text-align: center;
-  margin: 2rem auto;
+  margin: 0 auto;
+  padding-block: 4.5rem;
 }
 
 .item {
@@ -476,6 +539,11 @@ form {
 
   /* Services Section */
   .service-container {
+    flex-direction: column;
+  }
+
+  /* Project Section */
+  .project-container {
     flex-direction: column;
   }
 

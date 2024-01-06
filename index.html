@@ -14,6 +14,7 @@
     <script src="./app.js" defer></script>
     <script src="https://smtpjs.com/v3/smtp.js" defer></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
     <link rel="Icon" href="img/Logo.png" />
     <title>Kampat</title>
   </head>
@@ -28,9 +29,9 @@
         <ul class="links">
           <li><a href="#about-section" onclick="closeNav()">About</a></li>
           <li><a href="#service-section" onclick="closeNav()">Services</a></li>
-          <li><a href="#" onclick="closeNav()">Projects</a></li>
+          <li><a href="#project-section" onclick="closeNav()">Projects</a></li>
           <li>
-            <a href="#contact-section" id="contact-btn" onclick="closeNav()"
+            <a href="#contact-section" id="contact-link" onclick="closeNav()"
               >Contact Us</a
             >
           </li>
@@ -60,9 +61,12 @@
             nobis, ipsa ipsam sunt quod optio cum incidunt, quos autem corporis
             pariatur.
           </p>
-          <button type="button" id="hero-section-call-to-action">
-            Contact Us
-          </button>
+
+          <a href="#contact-section" id="contact-btn">
+            <button type="button" id="hero-section-call-to-action">
+              Contact Us
+            </button>
+          </a>
 
           <!-- Social Links -->
           <div class="hero-section-social">
@@ -125,7 +129,7 @@
         <div class="service-container">
           <div class="service-card">
             <img src="img/7790128-removebg-preview.png" width="260px" alt="" />
-            <h3 class="service-title">Roofing Installation</h3>
+            <h3 class="service-title">Roof Installation</h3>
             <p class="service-info">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, id
               harum, atque adipisci sit cumque voluptatem voluptate officiis
@@ -167,7 +171,58 @@
       </section>
 
       <!-- PROJECTS SECTION -->
-      <section id="project-section"></section>
+      <section id="project-section">
+        <h2 class="project-heading">Resent Projects</h2>
+        <div class="project-container">
+          <div class="project-card">
+            <img
+              src="img/IMG-20231231-WA0001.jpg"
+              width="240px"
+              height="240px"
+              alt=""
+            />
+            <h3 class="project-title">Ceiling</h3>
+            <p class="project-info">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt
+              eius optio obcaecati? Magni harum officia, consectetur quas quia
+              iusto in quaerat suscipit blanditiis deleniti sapiente nobis ex,
+              praesentium necessitatibus consequuntur. lorem
+            </p>
+          </div>
+
+          <div class="project-card">
+            <img
+              src="img/IMG-20231231-WA0002.jpg"
+              width="240px"
+              height="240px"
+              alt=""
+            />
+            <h3 class="project-title">Ceiling Project</h3>
+            <p class="project-info">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt
+              eius optio obcaecati? Magni harum officia, consectetur quas quia
+              iusto in quaerat suscipit blanditiis deleniti sapiente nobis ex,
+              praesentium necessitatibus consequuntur.
+            </p>
+          </div>
+
+          <div class="project-card">
+            <img
+              src="img/IMG-20231231-WA0003.jpg"
+              width="240px"
+              height="240px"
+              alt=""
+            />
+            <h3 class="project-title">Roofing Project</h3>
+            <p class="project-info">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt
+              eius optio obcaecati? Magni harum officia, consectetur quas quia
+              iusto in quaerat suscipit blanditiis deleniti sapiente nobis ex,
+              praesentium necessitatibus consequuntur.
+            </p>
+          </div>
+        </div>
+      </section>
 
       <!-- CONTACT SECTION -->
       <section id="contact-section">
@@ -190,7 +245,6 @@
               id="email"
               name="email"
               placeholder="Email Address"
-              autocomplete="off"
               required
               class="item"
             />
@@ -203,7 +257,6 @@
               name="phone"
               pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
               placeholder="Phone Number"
-              autocomplete="off"
               required
               class="item"
             />
@@ -227,7 +280,6 @@
               cols="30"
               rows="10"
               placeholder="Your Message"
-              autocomplete="off"
               required
               class="item"
             ></textarea>
