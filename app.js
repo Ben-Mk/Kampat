@@ -2,6 +2,8 @@
 const humbergerBtn = document.querySelector(".humberger-icon");
 const menuContainer = document.querySelector(".nav-bar");
 const navigationBar = document.querySelector(".header");
+const loaderContainer = document.querySelector(".loader-container");
+const mainContent = document.querySelector("main");
 
 const form = document.querySelector("form");
 const fullName = document.getElementById("name");
@@ -9,6 +11,12 @@ const email = document.getElementById("email");
 const phone = document.getElementById("phone");
 const mess = document.getElementById("message");
 const subject = document.getElementById("issue");
+
+window.addEventListener("load", () => {
+  loaderContainer.classList.add("hidden");
+  navigationBar.classList.add("visible");
+  mainContent.classList.add("visibility");
+});
 
 //Humbergur Icon and Mobile Menu
 humbergerBtn.addEventListener("click", (e) => {
