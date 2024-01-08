@@ -12,12 +12,6 @@ const phone = document.getElementById("phone");
 const mess = document.getElementById("message");
 const subject = document.getElementById("issue");
 
-window.addEventListener("load", () => {
-  loaderContainer.classList.add("hidden");
-  navigationBar.classList.add("visible");
-  mainContent.classList.add("visibility");
-});
-
 //Humbergur Icon and Mobile Menu
 humbergerBtn.addEventListener("click", (e) => {
   if (menuContainer.classList.contains("appear")) {
