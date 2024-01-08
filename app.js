@@ -50,9 +50,11 @@ function closeNav() {
 function sendEmail() {
   const bodyMessage = `Name: ${fullName.value}<br> Email: ${email.value} <br> Phone Number: ${phone.value} <br> Message: ${mess.value}`;
   Email.send({
-    SecureToken: "12f30024-bc7f-4421-bcbb-c34b976a8319",
+    Host: "smtp.elasticemail.com",
+    Username: "benmk38@gmail.com",
+    Password: "0AEC3DA8212330E4EA98CD71AAFA30345730",
     To: "benmk300@gmail.com",
-    From: "benmk300@gmail.com",
+    From: "benmk38@gmail.com",
     Subject: subject.value,
     Body: bodyMessage,
   }).then((message) => {
