@@ -40,10 +40,12 @@ function closeOnWindow() {
 }
 
 function closeNav() {
-  menuContainer.classList.remove("appear");
-  menuContainer.classList.add("disappear");
-  humbergerBtn.querySelector("i.fa-solid").classList.remove("fa-xmark");
-  humbergerBtn.querySelector("i.fa-solid").classList.add("fa-bars");
+  if (menuContainer.classList.contains("appear")) {
+    menuContainer.classList.remove("appear");
+    menuContainer.classList.add("disappear");
+    humbergerBtn.querySelector("i.fa-solid").classList.remove("fa-xmark");
+    humbergerBtn.querySelector("i.fa-solid").classList.add("fa-bars");
+  }
 }
 
 //Email Function
