@@ -184,7 +184,7 @@ main {
 /* Main Heading */
 .hero-section-main-heading {
   font-size: clamp(3rem, 10vw, 10rem);
-  color: rgb(49, 49, 184);
+  color: rgb(75, 75, 175);
   font-weight: 1200;
 }
 
@@ -461,17 +461,14 @@ form {
 }
 
 #submit-btn:hover {
-  box-shadow: 0 0 10px var(--blue);
-}
-
-footer {
-  background-color: var(--blue);
+  box-shadow: 0 0 10px rgb(54, 54, 126);
 }
 
 /* Social Links */
 .social-section {
-  margin-top: 3rem;
-  padding-block: 1rem;
+  margin-top: 1rem;
+  padding-block: 0.5rem;
+  background-color: rgb(33, 33, 158);
 }
 
 .social-section-container {
